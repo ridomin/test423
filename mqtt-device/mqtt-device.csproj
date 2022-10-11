@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>mqtt_device</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Properties\launchSettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+    <PackageReference Include="MQTTnet.Extensions.MultiCloud.AzureIoTClient" Version="0.4.*" />
+    <PackageReference Include="MQTTnet.Extensions.MultiCloud.BrokerIoTClient" Version="0.4.*" />
+  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="*.g.cs">
+			<DependentUpon>dtmi_com_example_devicetemplate-1.json</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Update="*.pem">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+</Project>
+	

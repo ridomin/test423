@@ -1,0 +1,2 @@
+cp mqtt-device/Properties/launchSettings.json.template mqtt-device/Properties/launchSettings.json
+docker run -d --rm -p 8080:8080 -p 1883:1883 -p 8883:8883 -p 8884:8884 -p 8443:8443  ridomin/mosquitto-local:dev
